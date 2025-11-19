@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeo5TnBR1C1pC9O6p7klkW1C6EYJ5f5kdW5p9ctTAlas3Hbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #6c757d, #495057);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background-color: #2b2f36;
+            border: 4px solid #007bff; /* Thick blue border */
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e9ecef;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .text-center a {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .text-center a:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        input[type="text"], input[type="password"], input[type="number"] {
+            border-radius: 10px;
+            border: 2px solid #007bff;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center mb-4">
+                    <h1>Welcome to Smart Posture Alert</h1>
+                </div>
+                <div id="auth">
+                    <!-- Register Form -->
+                    <div id="register-form" class="card">
+                        <h2 class="text-center mb-4">Register</h2>
+                        <form action="/register" method="post">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="phone_number" placeholder="Phone Number"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="number" class="form-control" name="age" placeholder="Age" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                        </form>
+                        <p class="text-center mt-3">Already have an account? <a href="#" onclick="showLogin()">Login
+                                here</a></p>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div id="login-form" class="card hidden">
+                        <h2 class="text-center mb-4">Login</h2>
+                        <form action="/login" method="post">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                        <p class="text-center mt-3">Don't have an account? <a href="#" onclick="showRegister()">Register
+                                here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+R9s2h5o1EXUjTx2C6CkzD9fDF3iD" crossorigin="anonymous">
+    </script>
+
+    <!-- JavaScript to toggle between forms -->
+    <script>
+        function showLogin() {
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+        }
+
+        function showRegister() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('register-form').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>
